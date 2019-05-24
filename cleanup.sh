@@ -17,3 +17,6 @@ sudo iptables -D FORWARD -i enp0s31f6 -o mybridge -j ACCEPT
 sudo iptables -D FORWARD -o enp0s31f6 -i mybridge -j ACCEPT
 sudo iptables -D FORWARD -i wlp2s0 -o mybridge -j ACCEPT
 sudo iptables -D FORWARD -o wlp2s0 -i mybridge -j ACCEPT
+
+sudo iptables -D FORWARD -i mybridge ! -o mybridge -j ACCEPT
+sudo iptables -D FORWARD -i mybridge -o mybridge -j ACCEPT
